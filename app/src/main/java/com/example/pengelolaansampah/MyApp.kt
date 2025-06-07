@@ -1,0 +1,8 @@
+package com.example.pengelolaansampah
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+
+@HiltAndroidApp
+class MyApp : Application()

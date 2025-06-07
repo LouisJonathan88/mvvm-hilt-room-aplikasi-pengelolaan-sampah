@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#FFFFFF"
+    tools:context=".view.DaftarSampahMasukFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/header_section"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:paddingTop="16dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_app_logo"
+        android:contentDescription="Logo Aplikasi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SampahKita"
+        android:textColor="#171717"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
+        android:lineSpacingExtra="8sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@id/app_logo"
+        app:layout_constraintBottom_toBottomOf="@id/app_logo"
+        app:layout_constraintStart_toEndOf="@id/app_logo"/>
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_account_circle"
+        android:contentDescription="Profil Pengguna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/illustration_bg"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_city_waste_illustration"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toBottomOf="@id/app_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Ilustrasi"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toBottomOf="@id/header_section"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_sampah_tpps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/green_primary"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#108F5A"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_sampah_tpps_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sampah menuju TPPS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:lineHeight="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_total_kendaraan"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:text="40 kendaraan"
+                    android:textColor="#0F4FA4"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:lineSpacingExtra="6sp"
+                    android:background="@drawable/rounded_blue_background"
+                    android:alpha="0.8"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/tv_sampah_tpps_title"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_date_tpps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="29 November - 2024"
+                    android:textColor="#F5F5F5"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:lineHeight="11sp"
+                    android:gravity="center"
+                    android:alpha="0.8"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_kendaraan"
+                    app:layout_constraintStart_toEndOf="@id/tv_total_kendaraan"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_kendaraan"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTambah"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="+"
+            android:textColor="#108F5A"
+            android:textSize="25sp"
+            android:backgroundTint="#FFFFFF"
+            app:cornerRadius="12dp"
+            app:strokeColor="#108F5A"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toTopOf="@id/card_sampah_tpps"
+            app:layout_constraintBottom_toBottomOf="@id/card_sampah_tpps"
+            app:layout_constraintStart_toEndOf="@id/card_sampah_tpps"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@id/card_sampah_tpps"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="Ikon Pencarian"
+                    app:tint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Cari No.Kendaraan"
+                    android:inputType="text"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:lineHeight="20sp"
+                    android:textColorHint="#A3A3A3"
+                    android:letterSpacing="0.0" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sampah_masuk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintTop_toBottomOf="@id/search_card_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_sampah_masuk"
+            tools:itemCount="3"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

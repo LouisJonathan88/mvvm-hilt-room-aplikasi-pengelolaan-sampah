@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Base.Theme.PengelolaanSampah" parent="Theme.Material3.Light.NoActionBar">
+        <item name="buttonBarPositiveButtonStyle">@style/AppTheme.AlertDialog.PositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AppTheme.AlertDialog.NegativeButton</item>
+    </style>
+
+    <style name="Theme.PengelolaanSampah" parent="Base.Theme.PengelolaanSampah" />
+
+    <style name="AppTheme.AlertDialog.PositiveButton" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/green_primary</item>
+    </style>
+
+    <style name="AppTheme.AlertDialog.NegativeButton" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/grey_700</item>
+    </style>
+
+    <style name="CustomDatePickerDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/green</item>
+        <item name="colorOnPrimaryContainer">@android:color/white</item>
+
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/black</item>
+
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+        <item name="android:textColorTertiary">@android:color/darker_gray</item>
+
+
+        <item name="colorSecondaryContainer">@color/green_primary</item>
+        <item name="colorOnSecondaryContainer">@android:color/white</item>
+
+        <item name="colorOnSurfaceVariant">@android:color/black</item>
+
+        <item name="materialTimePickerTheme">@style/CustomTimePickerDialogTheme</item>
+    </style>
+
+    <style name="CustomTimePickerDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/green</item>
+        <item name="colorOnPrimaryContainer">@android:color/white</item>
+
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/black</item>
+
+        <item name="colorSecondaryContainer">@color/green_primary</item>
+        <item name="colorOnSecondaryContainer">@android:color/white</item>
+
+        <item name="colorOnSurfaceVariant">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+    </style>
+
+</resources>

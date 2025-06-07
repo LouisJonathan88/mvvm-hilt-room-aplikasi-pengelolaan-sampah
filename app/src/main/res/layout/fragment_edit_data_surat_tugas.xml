@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".view.EditDataSuratTugasFragment"> <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/header_layout"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@android:color/white"
+    android:elevation="4dp">
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tint="@android:color/black"
+        android:contentDescription="Tombol Kembali"/>
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah data sampah masuk"
+        android:textColor="#171717"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header_layout"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/info_surat_tugas_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info surat tugas"
+                android:textColor="#108F5A"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold"
+                android:lineHeight="22sp"
+                android:letterSpacing="-0.0001"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/info_surat_tugas_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="masukan data surat tugas pengangkutan sampah."
+                android:textColor="#737373"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_regular"
+                android:lineSpacingExtra="6sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/info_surat_tugas_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <View
+                android:id="@+id/line_below_description"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_200"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/info_surat_tugas_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/label_id_surat_jalan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Surat jalan"
+                android:textColor="#171717"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/line_below_description"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/icon_id_surat_jalan"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_lock"
+                app:tint="@android:color/darker_gray"
+                android:contentDescription="Ikon Kunci"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/label_id_surat_jalan"
+                app:layout_constraintTop_toTopOf="@id/label_id_surat_jalan"
+                app:layout_constraintBottom_toBottomOf="@id/label_id_surat_jalan"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_id_surat_jalan"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:startIconDrawable="@null"
+                app:startIconTint="@null"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_id_surat_jalan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_id_surat_jalan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="#7384565"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/vehicle_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_id_surat_jalan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/label_no_kendaraan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No.Kendaraan *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_no_kendaraan"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_no_kendaraan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KT 8756 CI"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/label_jenis_kendaraan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis kendaraan *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_jenis_kendaraan"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_jenis_kendaraan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="LH"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_jenis_pengirim_page3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis pengirim *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_info_layout"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_jenis_pengirim_page3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_jenis_pengirim_page3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinner_jenis_pengirim_page3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Pemerintah"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/label_nama_pengemudi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama pengemudi *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_jenis_pengirim_page3"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_nama_pengemudi"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_nama_pengemudi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinner_nama_pengemudi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Asep"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/crew_row_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_nama_pengemudi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/label_crew_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crew 1 *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_crew_1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_crew_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Rendi"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/label_crew_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crew 2 *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_crew_2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_crew_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Dedi"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/crew_row_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/crew_row_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/label_crew_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crew 3 *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_crew_3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_crew_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Adam"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/label_crew_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crew 4 *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_crew_4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_crew_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Raden"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_crew_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crew 5 *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/crew_row_2"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_crew_5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_crew_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinner_crew_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="Ridwan"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_batal"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Batal"
+            android:textColor="#108F5A"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            android:lineHeight="22sp"
+            android:letterSpacing="-0.0001"
+            android:gravity="center"
+            app:strokeColor="#108F5A"
+            android:layout_marginEnd="8dp"
+            app:cornerRadius="8dp"/>
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Simpan"
+            android:backgroundTint="#108F5A"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            android:lineHeight="22sp"
+            android:letterSpacing="-0.0001"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:cornerRadius="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

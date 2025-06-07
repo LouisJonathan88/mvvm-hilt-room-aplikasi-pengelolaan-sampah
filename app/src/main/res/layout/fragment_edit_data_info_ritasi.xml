@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".view.EditDataInfoRitasiFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/white"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@android:color/black"
+            android:contentDescription="Tombol Kembali"/>
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah data sampah masuk"
+            android:textColor="#171717"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_medium"
+            android:lineSpacingExtra="8sp"
+            app:layout_constraintStart_toEndOf="@id/back_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header_layout"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/info_ritasi_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info ritasi"
+                android:textColor="#108F5A"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold"
+                android:lineHeight="22sp"
+                android:letterSpacing="-0.0001"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/info_ritasi_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="masukan data ritasi pengangkutan sampah."
+                android:textColor="#737373"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_regular"
+                android:lineSpacingExtra="6sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/info_ritasi_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <View
+                android:id="@+id/line_below_description"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_200"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/info_ritasi_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/label_id_ritasi_tpa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Ritasi TPA"
+                android:textColor="#171717"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/line_below_description"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/icon_id_ritasi_tpa"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_lock"
+                app:tint="@android:color/darker_gray"
+                android:contentDescription="Ikon Kunci"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/label_id_ritasi_tpa"
+                app:layout_constraintTop_toTopOf="@id/label_id_ritasi_tpa"
+                app:layout_constraintBottom_toBottomOf="@id/label_id_ritasi_tpa"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_id_ritasi_tpa"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:startIconDrawable="@null"
+                app:startIconTint="@null"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_id_ritasi_tpa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_id_ritasi_tpa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="#7384565"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/label_tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_id_ritasi_tpa"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_tanggal"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_tanggal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="29/Feb/2024"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/label_volume_sampah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volume sampah *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_tanggal"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_volume_sampah"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:suffixText="Ton"
+                app:suffixTextColor="#525252"
+                app:expandedHintEnabled="false"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_volume_sampah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_volume_sampah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2,75"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/time_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_volume_sampah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/label_jam_masuk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jam masuk"
+                            android:textColor="#171717"
+                            android:fontFamily="@font/inter_medium"
+                            android:lineHeight="20sp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/icon_jam_masuk"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_lock"
+                            app:tint="@android:color/darker_gray"
+                            android:contentDescription="Ikon Kunci"
+                            android:layout_marginStart="4dp"
+                            app:layout_constraintStart_toEndOf="@id/label_jam_masuk"
+                            app:layout_constraintTop_toTopOf="@id/label_jam_masuk"
+                            app:layout_constraintBottom_toBottomOf="@id/label_jam_masuk"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_jam_masuk"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:startIconDrawable="@null"
+                        app:startIconTint="@null"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_jam_masuk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="-"
+                            android:inputType="time"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:cursorVisible="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/label_jam_keluar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jam keluar"
+                            android:textColor="#171717"
+                            android:fontFamily="@font/inter_medium"
+                            android:lineHeight="20sp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/icon_jam_keluar"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_lock"
+                            app:tint="@android:color/darker_gray"
+                            android:contentDescription="Ikon Kunci"
+                            android:layout_marginStart="4dp"
+                            app:layout_constraintStart_toEndOf="@id/label_jam_keluar"
+                            app:layout_constraintTop_toTopOf="@id/label_jam_keluar"
+                            app:layout_constraintBottom_toBottomOf="@id/label_jam_keluar"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_jam_keluar"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:startIconDrawable="@null"
+                        app:startIconTint="@null"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_jam_keluar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="-"
+                            android:inputType="time"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:cursorVisible="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_petugas_pencatat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Petugas pencatat"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/time_input_layout"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/icon_petugas_pencatat"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_lock"
+                app:tint="@android:color/darker_gray"
+                android:contentDescription="Ikon Kunci"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/label_petugas_pencatat"
+                app:layout_constraintTop_toTopOf="@id/label_petugas_pencatat"
+                app:layout_constraintBottom_toBottomOf="@id/label_petugas_pencatat"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_petugas_pencatat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:startIconTint="@android:color/darker_gray"
+                app:hintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/label_petugas_pencatat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_petugas_pencatat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Maman"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/weight_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/til_petugas_pencatat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/label_bruto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bruto *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_bruto"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:suffixText="Kg"
+                        app:suffixTextColor="#525252"
+                        app:expandedHintEnabled="false"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_bruto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="0"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/label_tarra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarra *"
+                        android:textColor="#171717"
+                        android:fontFamily="@font/inter_medium"
+                        android:lineHeight="20sp"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_tarra"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:suffixText="Kg"
+                        app:suffixTextColor="#525252"
+                        app:expandedHintEnabled="false"
+                        app:hintEnabled="false"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_tarra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="0"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_netto_tonase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Netto/tonase *"
+                android:textColor="#171717"
+                android:fontFamily="@font/inter_medium"
+                android:lineHeight="20sp"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/weight_input_layout"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_netto_tonase"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false"
+                app:suffixText="Kg"
+                app:suffixTextColor="#525252"
+                app:expandedHintEnabled="false"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/label_netto_tonase"
+                app:boxCornerRadiusBottomEnd="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_netto_tonase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="123,45"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_batal"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Batal"
+            android:textColor="#108F5A"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            android:lineHeight="22sp"
+            android:letterSpacing="-0.0001"
+            android:gravity="center"
+            app:strokeColor="#108F5A"
+            android:layout_marginEnd="8dp"
+            app:cornerRadius="8dp"/>
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Simpan"
+            android:backgroundTint="#108F5A"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            android:lineHeight="22sp"
+            android:letterSpacing="-0.0001"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:cornerRadius="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
